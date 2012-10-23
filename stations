@@ -1,0 +1,8 @@
+#!/bin/sh
+
+echo Content-type: text/plain
+echo ""
+
+DEV=`iw dev |grep IBSS -B2|head -n1|sed 's/.*Interface //'`
+                           
+iw dev $DEV station dump   
